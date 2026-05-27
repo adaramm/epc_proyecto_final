@@ -1,4 +1,4 @@
-#IA-32 Assembler & Mini Linker
+# IA-32 Assembler & Mini Linker
 
 ## Proyecto integrador para la implementación de:
 
@@ -331,7 +331,9 @@ typedef enum {
     TOKEN_NEWLINE,
     TOKEN_EOF
 } TokenType;
-Token
+```
+# Token
+```C
 typedef struct {
     TokenType type;
     char lexeme[64];
@@ -347,7 +349,10 @@ unsigned char build_modrm(
 ) {
     return (mod << 6) | (reg << 3) | rm;
 }
-Construcción SIB
+```
+
+## Construcción SIB
+```C
 unsigned char build_sib(
     unsigned char scale,
     unsigned char index,
@@ -355,7 +360,10 @@ unsigned char build_sib(
 ) {
     return (scale << 6) | (index << 3) | base;
 }
-Tabla de símbolos sugerida
+```
+
+## Tabla de símbolos sugerida
+```C
 typedef struct {
     char name[64];
     int address;
